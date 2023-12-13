@@ -47,3 +47,6 @@ public class AssociativeArray<K, V> {
     throw new KeyNotFoundException("There is no such key in this array.");
   }// get()
 }
+
+--- CITATIONS --- 
+Dingle, A. (2021). Object-Oriented Design Choices (1st ed.). Chapman and Hall/CRC. https://doi.org/10.1201/9781003013488
