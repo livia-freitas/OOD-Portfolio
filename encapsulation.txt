@@ -1,0 +1,49 @@
+--- EXPLANATION ---
+
+"OOD encapsulates  private  data,  providing  public  methods  for  the  client without direct access to encapsulated data. Class (type) definitions isolate the client from internal details, ensuring type consistency." - (Dingle, 2021)
+
+In Mini-Project 4, the main array of pairs (KVPair<K,V>[]) is not directly accessible by the users, given that the fields of the AssociativeArray class are protected. However, through the get() method, the program provides a way for users to access information about the array (without it being exposed to user changes). Therefore, this code demonstrates encapsulation.
+
+--- CODE ---
+
+public class AssociativeArray<K, V> {
+// +-----------+---------------------------------------------------
+  // | Constants |
+  // +-----------+
+
+  /**
+   * The default capacity of the initial array.
+   */
+  static final int DEFAULT_CAPACITY = 16;
+
+  // +--------+------------------------------------------------------
+  // | Fields |
+  // +--------+
+
+  /**
+   * The size of the associative array (the number of key/value pairs).
+   */
+  int size;
+
+  /**
+   * The array of key/value pairs.
+   */
+  KVPair<K, V> pairs[];
+  /**
+   * Get the value associated with a given key. If there is no such key, throws an exception.
+   * 
+   * @param _key
+   * @return
+   * @throws Exception
+   */
+  public V get(K _key) throws KeyNotFoundException {
+    for (int i = 0; i < this.pairs.length; i++) {
+      if(this.pairs[i] == null){
+        continue;
+      } if (this.pairs[i].key.equals(_key)) {
+        return this.pairs[i].value;
+      } 
+    } // for
+    throw new KeyNotFoundException("There is no such key in this array.");
+  }// get()
+}
