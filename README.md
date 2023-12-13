@@ -1,2 +1,2 @@
 # OOD-Portfolio
-A portfolio of the code I wrote in my CSC-207 Fall 2023 class as it pertains to object-oriented design.
+A portfolio of the code I wrote for my CSC-207 Fall 2023 class as pertaining object-oriented design.
